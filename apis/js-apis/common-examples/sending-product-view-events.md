@@ -4,7 +4,7 @@ When you need to explicity send an event to Nosto to tell it that the user has v
 
 ```javascript
 nostojs(function(api) {
-  api.createRecommendationRequest()
+  api.createRecommendationRequest({includeTagging: true})
     .addEvent('vp', "product-id-101")
     .loadRecommendations();
 });
@@ -16,7 +16,7 @@ In the event that the product was viewed due to a click on a Nosto placement, yo
 
 ```javascript
 nostojs(function(api){
-   var request = api.createRecommendationRequest()
+   var request = api.createRecommendationRequest({includeTagging: true})
      .addEvent('vp', "product-id", "placement-id")
      .loadRecommendations();
 });
